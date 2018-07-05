@@ -14,8 +14,11 @@ class SearchBook extends Component{
         books:[]
     };
 
+    /**
+     * Search query with API
+     * @param query Query for search
+     */
     querySearch=(query)=>{
-        let { books } = this.props;
         this.setState({query: query});
         if(this.state.query === '')
             return;
@@ -24,7 +27,7 @@ class SearchBook extends Component{
             .then((result) => {
                 if(result.length>0){
                     let resultBooks = result.map((b)=>{
-                        let onShelfBook = books.find((osb)=>osb.id === b.id);
+                        let onShelfBook = this.props.books.find((osb)=>osb.id === b.id);
                         let onShelfStatus = onShelfBook? onShelfBook.shelf:'none';
 
                         return{

@@ -15,6 +15,10 @@ class Book extends Component {
         this.setState({shelf});
     }
 
+    /**
+     * Set book on shelf
+     * @param value Shelf value
+     */
     setBookShelf(value){
         let {onUpdateBookShelf} = this.props;
         onUpdateBookShelf(this.props,value);

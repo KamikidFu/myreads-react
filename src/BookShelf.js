@@ -6,6 +6,14 @@
 import React from 'react';
 import Book from './Book';
 
+/**
+ * Stateless function for book shelf
+ * @param name Show each shelf name
+ * @param books Books array for showing details
+ * @param onUpdateBookShelf update book shelf function
+ * @returns {*} JSX
+ * @constructor None
+ */
 export default function BookShelf ({name, books, onUpdateBookShelf}){
     return(
         <div className='bookshelf'>

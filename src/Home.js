@@ -8,6 +8,11 @@ import {Link} from 'react-router-dom';
 import BookShelf from './BookShelf';
 
 class Home extends Component {
+    /**
+     * Filter for making books into right its shelf
+     * @param shelf Shelf value
+     * @returns {*} New filtered books array
+     */
     onShelfFilter = (shelf) => {
         let {books} = this.props;
         return books.filter((b) => b.shelf === shelf);

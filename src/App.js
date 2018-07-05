@@ -23,12 +23,20 @@ class BooksApp extends Component {
         });
     }
 
+    /**
+     * When updating a book status
+     * @param book Updating book
+     * @param shelf Which shelf it should be
+     */
     onUpdateBookShelf = (book, shelf) => {
+        //Find the index of book
         let bookIndex = this.state.books.findIndex((key) => {
             return key.id === book.id;
         });
+        //Assign previous books to variable
         let onShelfBooks = Object.assign([], this.state.books);
 
+        //Update books
         if (bookIndex === -1) {
             let b = Object.assign({}, book);
             b.shelf = shelf;
@@ -38,6 +46,7 @@ class BooksApp extends Component {
             onShelfBooks[bookIndex].shelf = shelf;
         }
 
+        //Set state of new booksOnShelf to books array
         BooksAPI.update(book, shelf)
             .then(
                 this.setState({books: onShelfBooks})
