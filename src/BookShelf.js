@@ -21,7 +21,7 @@ export default function BookShelf ({name, books, onUpdateBookShelf}){
                 {name}
             </h2>
             <div className='bookshelf-books'>
-                <ol className='books'>
+                <ol  className='books-grid'>
                     {
                         books.sort((b1,b2) => {
                             return b1.title>b2.title;

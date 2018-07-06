@@ -4,6 +4,12 @@ This is the starter template for the final assessment project for Udacity's Reac
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
 
+## Author Statement
+Please Kindly Note that, this project is done by myself with inspiration from jgilless at https://github.com/jgilless/myreads
+The author of this project do appreciate jgilless committed open-source code for reference which I could learn more from him or her.
+Kind regards and best wishes say my thanks to jgilless.
+
+
 ## TL;DR
 
 To get started developing right away:
@@ -63,7 +69,7 @@ update(book, shelf)
 ```
 
 * book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
+* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]
 * Returns a Promise which resolves to a JSON object containing the response data of the POST request
 
 ### `search`

@@ -19,7 +19,7 @@ class SearchBook extends Component{
      * @param query Query for search
      */
     querySearch=(query)=>{
-        this.setState({query: query});
+        this.setState({query: query}, ()=>{
         if(this.state.query === '')
             return;
 
@@ -33,14 +33,16 @@ class SearchBook extends Component{
                         return{
                             id: b.id,
                             shelf: onShelfStatus,
-                            authors: b.authors,
-                            title: b.title,
-                            imageLinks:{thumbnail: b.imageLinks.thumbnail}
+                            authors: b.author?b.authors:"",
+                            title: b.title?b.title:"",
+                            imageLinks: {thumbnail: b.imageLinks ? b.imageLinks.thumbnail : ''}
+
                         };
                     });
                     this.setState({books: resultBooks});
                 }
             });
+        });
     };
 
     render(){
